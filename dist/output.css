@@ -1,0 +1,169 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-image: url("https://i.ibb.co/wK3y0kz/red-2892235-1920.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 0;
+}
+
+.typing-effect {
+  position: absolute;
+  top: 300;
+  font-size: 64px;
+  font-family: Arial, sans-serif;
+  white-space: nowrap;
+  /* Giữ văn bản không xuống dòng */
+  overflow: hidden;
+  /* Ẩn các ký tự chưa hiển thị */
+  border-right: 2px solid black;
+  /* Tạo con trỏ gõ */
+  animation: typing 30s steps(1000, end), blink-caret 0.65s step-end infinite;
+}
+
+/* Hiệu ứng gõ chữ */
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 60%;
+  }
+}
+
+/* Hiệu ứng nháy con trỏ */
+
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+
+  50% {
+    border-color: black;
+  }
+}
+
+.animated {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+.animated.faster {
+  animation-duration: 500ms;
+}
+
+.fadeIn {
+  animation-name: fadeIn;
+}
+
+.fadeOut {
+  animation-name: fadeOut;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+.container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  transform-style: preserve-3d;
+}
+
+.container .box {
+  position: relative;
+  width: 300px;
+  height: 400px;
+  margin: 40px;
+  background: rgba(246, 244, 244, 0.2);
+  border-radius: 20px;
+  transform-style: preserve-3d;
+}
+
+.container .box .name {
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-align: center;
+  width: 100%;
+  transform-style: preserve-3d;
+  transform: translate3d(0, 0, 75px);
+  color: #fff;
+  opacity: 0;
+  z-index: 10;
+  transition: 0.5s;
+}
+
+.container .box:hover .name {
+  top: 40px;
+  opacity: 1;
+}
+
+.container .box .buy {
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform-style: preserve-3d;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  padding: 20px 25px;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: 0.5s;
+  transform: translate3d(-50%, 0, 80px);
+  width: 120px;
+  font-weight: 600;
+  text-align: center;
+  z-index: 10;
+}
+
+.container .box .product {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-style: preserve-3d;
+  transform: translate3d(-50%, -50%, 0);
+  max-width: 300px;
+  transition: 0.5s;
+}
+
+.container .box:hover .product {
+  transform: translate3d(-50%, -50%, 100px);
+}
